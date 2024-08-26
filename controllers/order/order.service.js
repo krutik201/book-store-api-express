@@ -150,6 +150,11 @@ class OrderService {
         }
     }
 
+    /**
+     * [@Description: This function for getting orders details by ID]
+     * @param { userId, orderId}- to add order details
+     * @author: Krutik Shukla
+     **/
     async getCartById(cartId, userId) {
         try {
             /* Authenticate user */
@@ -174,7 +179,7 @@ class OrderService {
             throw new Error(error.message);
         }
     }
-
+    /* Separate function for formatting the response */
     formatResponse(response, isSingleOrder = false) {
         const formatOrder = (order) => ({
             id: order.id,

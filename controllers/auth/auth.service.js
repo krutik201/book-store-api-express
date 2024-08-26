@@ -115,8 +115,11 @@ class AuthService {
                 throw new UnauthorizedException("Invalid email or password");
             }
 
-            // Generate JWT (Assuming you have a function for generating tokens)
-            const token = this.generateJwtToken(user); // implement generateJwtToken separately
+            /* Generate JWT  */
+            const token =
+                this.generateJwtToken(
+                    user
+                ); /* implement generateJwtToken separately */
 
             return { user, token };
         } catch (error) {
@@ -133,7 +136,7 @@ class AuthService {
     generateJwtToken(user) {
         return jwt.sign(
             { id: user.id, email: user.email },
-            process.env.JWT_SECRET, // Ensure this is set in your environment
+            process.env.JWT_SECRET /*Token form the env file*/,
             { expiresIn: "1d" }
         );
     }

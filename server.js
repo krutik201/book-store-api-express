@@ -9,6 +9,7 @@ const authRoutes = require("./routes/auth.routes.js");
 const bookRoutes = require("./routes/book.routes.js");
 const cartRoutes = require("./routes/cart.routes.js");
 const orderRoutes = require("./routes/order.routes.js");
+const errorHandler = require("./utility/error-handlers.js");
 
 const app = express();
 
@@ -33,9 +34,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRoutes);
-app.use("/books", bookRoutes);
-app.use("/api", cartRoutes);
-app.use("/orders", orderRoutes);
+app.use("/book", bookRoutes);
+app.use("/cart", cartRoutes);
+app.use("/order", orderRoutes);
 
 /* Define error-handling middleware last */
 app.use(errorHandler);

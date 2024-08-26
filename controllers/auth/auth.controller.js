@@ -15,8 +15,8 @@ class AuthController {
                 data: user,
             });
         } catch (error) {
-            // Pass the error to the global error handler
-            next(error); // Pass the error to the global error handler
+            /* Pass the error to the global error handler */
+            next(error);
         }
     }
 
@@ -28,13 +28,15 @@ class AuthController {
      */
     async login(req, res, next) {
         try {
-            const { user, token } = await authService.login(req.body); // Call the service to log in the user
+            const { user, token } = await authService.login(
+                req.body
+            ); /* Call the service to log in the user */
             res.status(200).json({
                 message: "Login successful",
                 data: { user, token },
             });
         } catch (error) {
-            next(error); // Pass the error to the global error handler
+            next(error); /* Pass the error to the global error handler */
         }
     }
 }

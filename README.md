@@ -1,4 +1,4 @@
-# Minimal User Handling using Express.js and PostgreSQL
+# Book store api using Express.js and PostgreSQL
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ npm install
 
 ## Configuration
 
-You will have to update some values in `config/db.config.js`
+You will have to update some values in `config/config.json`
 
 | key      | description                                                                                                      |
 | -------- | ---------------------------------------------------------------------------------------------------------------- |

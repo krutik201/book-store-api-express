@@ -10,6 +10,7 @@ class BookService {
      */
     async getBookList(filterDto) {
         try {
+            /*This filter DTO is been set static as now for testing purpose */
             const {
                 offset = 0 /* temp for testing made to the offset to 0 */,
                 limit = 10 /* limit made 10 as of now*/,
