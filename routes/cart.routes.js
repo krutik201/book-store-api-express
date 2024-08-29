@@ -8,8 +8,8 @@ router.get("/list", authenticateToken, cartController.getCartByUserId);
 
 router.post(
     "/add",
-    authenticateToken,
     validateAddToCart,
+    authenticateToken,
     cartController.addToCart
 );
 router.delete("/remove", authenticateToken, cartController.removeFromCart);
